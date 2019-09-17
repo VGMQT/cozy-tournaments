@@ -3,7 +3,11 @@ $font-path_name: 'OpenSans';
 
 // Static colors
 $white: #ffffff;
+$berry: #a10115;
+$cherry: #d72c16;
+$chiffon: #f0efea;
+$smoke: #c0b2b5;
 
 // Project colors
-$accent_color: #61dafb;
-$bg_color: #282c34;
+$accent_color: $chiffon;
+$bg_color: $cherry;
