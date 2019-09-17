@@ -8,18 +8,20 @@ module.exports = {
     '@vue/airbnb',
   ],
   rules: {
-    'camelcase': 0,
+    camelcase: 0,
+    'import/extensions': 0,
     'import/imports-first': ['error', 'absolute-first'],
     'import/newline-after-import': 'error',
-    'indent': ['error', 2],
+    indent: ['error', 2],
     'no-console': 'warn',
     'no-debugger': 'warn',
     'no-underscore-dangle': 0,
-    'quotes': ['error', 'single'],
+    'no-unused-vars': 'warn',
+    quotes: ['error', 'single'],
 
     /* 'expression' or 'declaration'
     Choose your own or delete to disable */
-    'func-style': ['error', 'expression']
+    'func-style': ['error', 'expression'],
   },
   parserOptions: {
     parser: 'babel-eslint',
