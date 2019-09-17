@@ -1,7 +1,6 @@
 {
   "name": "cozy-tournaments",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -9,6 +8,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "normalize.css": "^8.0.1",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"

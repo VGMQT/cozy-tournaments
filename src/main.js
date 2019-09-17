@@ -1,4 +1,6 @@
 import Vue from 'vue';
+import 'normalize.css';
+import './styles/global.scss';
 import App from './App.vue';
 import router from './router';
 import './registerServiceWorker';
