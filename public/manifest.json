@@ -1,6 +1,6 @@
 {
-  "name": "cozy-tournaments",
-  "short_name": "cozy-tournaments",
+  "name": "Cozy Tournaments",
+  "short_name": "CT",
   "icons": [
     {
      "src": "\/android-icon-36x36.png",
@@ -38,9 +38,5 @@
      "type": "image\/png",
      "density": "4.0"
     }
-  ],
-  "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#d72c16",
-  "theme_color": "#d72c16"
+  ]
 }
