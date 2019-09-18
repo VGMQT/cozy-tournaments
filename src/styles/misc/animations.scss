@@ -1,0 +1,15 @@
+.animation {
+  &--opacityIn {
+    animation: opacityIn .15s ease-in-out;
+  }
+}
+
+@keyframes opacityIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

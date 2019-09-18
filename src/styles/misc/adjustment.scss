@@ -8,7 +8,7 @@ $container_width: 1550px;
 
 ::selection {
   color: $bg_color;
-  background-color: $main_color;
+  background-color: $primary_color;
 }
 
 html {
@@ -37,6 +37,7 @@ body {
   flex-direction: column;
   height: 100%;
   //-
+  background-color: $bg_color;
 }
 
 .container {
