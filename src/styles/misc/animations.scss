@@ -1,6 +1,10 @@
 .animation {
   &--opacityIn {
-    animation: opacityIn .15s ease-in-out;
+    animation: opacityIn .25s ease-in-out .25s forwards;
+  }
+
+  &--slideDown {
+    animation: slideDown .5s ease-in-out;
   }
 }
 
@@ -11,5 +15,15 @@
 
   to {
     opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 100%;
   }
 }

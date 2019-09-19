@@ -28,7 +28,31 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba($secondary_color_dark, .2);
+  background-color: rgba($secondary_color_dark, .8);
+}
+
+:global(.hamburger) {
+  &-inner,
+  :global(.hamburger-inner) {
+    background-color: $primary_color;
+
+    &::before,
+    &::after {
+      background-color: $primary_color;
+    }
+  }
+}
+
+:global(.hamburger.is-active) {
+  &-inner,
+  :global(.hamburger-inner) {
+    background-color: $text_color;
+
+    &::before,
+    &::after {
+      background-color: $text_color;
+    }
+  }
 }
 
 :global(.hamburger),
@@ -50,27 +74,29 @@
       }
     }
   }
-
-  &-inner,
-  :global(.hamburger-inner) {
-    background-color: $primary_color;
-
-    &::before,
-    &::after {
-      background-color: $primary_color;
-    }
-  }
 }
 
 .nav {
   @include center();
   z-index: 1;
+  opacity: 0;
+}
+
+.item {
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .link {
   @include font(700);
-  font-size: 50px;
-  color: $primary_color;
+  display: block;
+  text-align: center;
+  font-size: 40px;
+  line-height: 1.2;
+  color: $text_color;
   transition: all .3s;
 
   &:hover,

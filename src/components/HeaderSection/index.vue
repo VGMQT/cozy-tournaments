@@ -8,10 +8,10 @@
           </a>
         </div>
         <div :class="$style.menu">
-          <div :class="[$style.overlay, isOpen ? 'animation--opacityIn' : 'hidden']"></div>
+          <div :class="[$style.overlay, isOpen ? 'animation--slideDown' : 'hidden']"></div>
           <button
             @click="isOpen = !isOpen"
-            class="hamburger hamburger--slider"
+            class="hamburger hamburger--squeeze"
             :class="{ 'is-active': isOpen }"
             type="button"
           >
@@ -21,22 +21,16 @@
           </button>
           <nav :class="[$style.nav, isOpen ? 'animation--opacityIn' : 'hidden']">
             <ul>
-              <li>
+              <li
+              v-for="(value, key) in content.nav"
+              :key="key"
+              :class="$style.item" >
                 <router-link
-                  to="/"
+                  :to="value"
                   @click.native="isOpen = false"
                   :class="$style.link"
                 >
-                  Home
-                </router-link>
-              </li>
-              <li>
-                <router-link
-                  to="/about"
-                  @click.native="isOpen = false"
-                  :class="$style.link"
-                >
-                  About
+                  {{ key }}
                 </router-link>
               </li>
             </ul>
@@ -48,14 +42,14 @@
 </template>
 
 <script>
+import content from '@/content.json';
+
 export default {
   name: 'header-section',
-  props: {
-    isOpen: {
-      type: Boolean,
-      default: false,
-    },
-  },
+  data: () => ({
+    isOpen: false,
+    content,
+  }),
 };
 </script>
 
