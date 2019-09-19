@@ -1,0 +1,32 @@
+@import "../../styles/includes/includes";
+
+.footer {
+  padding: rem(20px);
+
+  span {
+    margin-right: rem(10px);
+    font-size: rem(16px);
+    color: $primary_color;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  :global(.sprite-heart) {
+    transform-origin: center;
+    animation: heartbeat .75s infinite alternate;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes heartbeat {
+  to {
+    transform: scale(1.1);
+  }
+}

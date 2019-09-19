@@ -1,0 +1,17 @@
+.sprite {
+  display: block;
+  background-image: url("../assets/spritesheet.png");
+  background-repeat: no-repeat;
+}
+
+.sprite-heart {
+  width: 20px;
+  height: 20px;
+  background-position: -5px -5px;
+}
+
+.sprite-vue {
+  width: 20px;
+  height: 17px;
+  background-position: -35px -5px;
+}
