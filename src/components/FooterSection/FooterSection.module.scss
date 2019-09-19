@@ -1,12 +1,13 @@
 @import "../../styles/includes/includes";
 
 .footer {
-  padding: rem(20px);
+  padding: rem(50px) rem(20px) rem(20px);
+  background-color: $primary_color;
 
   span {
     margin-right: rem(10px);
     font-size: rem(16px);
-    color: $primary_color;
+    color: $text_color;
 
     &:last-child {
       margin-right: 0;
