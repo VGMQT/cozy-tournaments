@@ -12,6 +12,8 @@ module.exports = {
     'import/extensions': 0,
     'import/imports-first': ['error', 'absolute-first'],
     'import/newline-after-import': 'error',
+    'global-require': 0,
+    'import/no-dynamic-require': 0,
     indent: ['error', 2],
     'no-console': 'warn',
     'no-debugger': 'warn',
