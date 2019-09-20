@@ -14,7 +14,7 @@ module.exports = {
       test: /\.(svg)(\?.*)?$/,
       loaderOptions: {
         extract: true,
-        spriteFilename: 'src/assets/svg-icons--[hash:8].svg', // or 'img/icons.svg' if filenameHashing == false
+        spriteFilename: 'src/assets/svg-icons--[hash:8].svg',
       },
       pluginOptions: {
         plainSprite: true,
