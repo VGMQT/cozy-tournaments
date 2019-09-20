@@ -1,7 +1,7 @@
 module.exports = {
   lintOnSave: false,
 
-  chainWebpack: (config) => {
+  chainWebpack: config => {
     config.module
       .rule('svg-sprite')
       .use('svgo-loader')

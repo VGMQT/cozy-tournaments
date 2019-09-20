@@ -27,15 +27,8 @@
             </button>
             <nav :class="[$style.nav, isOpen ? 'animation--opacityIn' : 'hidden']">
               <ul>
-                <li
-                v-for="(value, key) in content.nav"
-                :key="key"
-                :class="$style.item" >
-                  <router-link
-                    :to="value"
-                    @click.native="isOpen = false"
-                    :class="$style.link"
-                  >
+                <li v-for="(value, key) in content.nav" :key="key" :class="$style.item">
+                  <router-link :to="value" @click.native="isOpen = false" :class="$style.link">
                     {{ key }}
                   </router-link>
                 </li>
