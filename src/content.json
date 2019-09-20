@@ -2,5 +2,10 @@
   "nav": {
     "Home": "/",
     "Tournaments": "/tournaments"
+  },
+  
+  "homepage": {
+    "title": "Disciplines",
+    "desc": "<p>This is a paragraph.</p><p>And this is another one.</p>"
   }
 }
