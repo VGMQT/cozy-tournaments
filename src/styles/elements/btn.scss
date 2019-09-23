@@ -1,0 +1,14 @@
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: rem(15px);
+  border-radius: 10px;
+  color: $text_color;
+  background-color: $secondary_color_dark;
+  transition: all .3s;
+
+  &-wrapper {
+    margin-top: rem(25px);
+    text-align: center;
+  }
+}

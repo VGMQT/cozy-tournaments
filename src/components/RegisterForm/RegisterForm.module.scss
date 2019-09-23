@@ -1,0 +1,18 @@
+@import "../../styles/includes/includes";
+
+.form {
+  padding: 10px;
+  margin-bottom: rem(20px);
+  border-radius: 10px;
+  background-color: $secondary_color;
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: rem(10px);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

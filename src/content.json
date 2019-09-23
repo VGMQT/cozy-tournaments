@@ -7,5 +7,10 @@
   "homepage": {
     "title": "Disciplines",
     "desc": "<p>This is a paragraph.</p><p>And this is another one.</p>"
+  },
+
+  "account": {
+    "title": "Log in or <br /> Create an account",
+    "registerForm": ["E-mail", "Password", "Proceed"]
   }
 }

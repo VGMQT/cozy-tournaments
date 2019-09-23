@@ -3,15 +3,15 @@
     <div class="container">
       <div :class="$style.wrapper">
         <div :class="$style.logo">
-          <a :class="$style.logo__link" href="/">
+          <router-link to="/" :class="$style.logo__link">
             <svg-icon name="logo" :className="$style.logo__svg" title="Logo" />
-          </a>
+          </router-link>
         </div>
         <div :class="$style.menu">
           <div :class="$style.account">
-            <a :class="$style.account__link" href="/">
+            <router-link to="/account" :class="$style.account__link">
               <svg-icon name="account" :className="$style.account__svg" title="Account" />
-            </a>
+            </router-link>
           </div>
           <div :class="$style.navigation">
             <div :class="[$style.overlay, isOpen ? 'animation--slideDown' : 'hidden']"></div>
@@ -22,7 +22,7 @@
               type="button"
             >
               <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
+                <span class="hamburger-inner" />
               </span>
             </button>
             <nav :class="[$style.nav, isOpen ? 'animation--opacityIn' : 'hidden']">

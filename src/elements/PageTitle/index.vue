@@ -1,5 +1,5 @@
 <template>
-  <h1 :class="$style.title">{{ title }}</h1>
+  <h1 :class="$style.title" v-html="title" />
 </template>
 
 <script>
