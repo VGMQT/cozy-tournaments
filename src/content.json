@@ -12,5 +12,31 @@
   "account": {
     "title": "Log in or <br /> Create an account",
     "registerForm": ["E-mail", "Password", "Proceed"]
-  }
+  },
+
+  "disciplines": [
+    {
+      "title": "Table tennis",
+      "link": "/",
+      "imgSrc": "@/assets/table_tennis.png"
+    },
+
+    {
+      "title": "Table football",
+      "link": "/",
+      "imgSrc": "@/assets/football.png"
+    },
+
+    {
+      "title": "Air hockey",
+      "link": "/",
+      "imgSrc": "@/assets/hockey.png"
+    },
+
+    {
+      "title": "Checkers",
+      "link": "/",
+      "imgSrc": "@/assets/checkers.png"
+    }
+  ]
 }

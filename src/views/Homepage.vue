@@ -2,7 +2,9 @@
   <div class="container">
     <page-title :title="content.title" />
     <page-desc :desc="content.desc" />
-    <discipline :imageSrc="'./images/tt.png'" :link="'/'" :title="'Tennis'" />
+    <div v-for="discipline in disciplines" :key="discipline.title">
+      <discipline :imageSrc="discipline.imgSrc" :link="discipline.link" :title="discipline.title" />
+    </div>
   </div>
 </template>
 
@@ -20,6 +22,7 @@ export default {
     Discipline,
   },
   data: () => ({
+    disciplines: content.disciplines,
     content: content.homepage,
   }),
 };

@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.discipline">
-    <img src="@/assets/table_tennis.png" alt="" />
-    <a :class="description" :href="link"
+    <img :class="$style.discipline_img" :src="imageSrc" alt="" />
+    <a :class="$style.description" :href="link"
       ><h2>{{ title }}</h2></a
     >
   </div>
@@ -13,7 +13,7 @@ export default {
   props: {
     link: String,
     title: String,
-    //imageSrc: String,
+    imageSrc: String,
   },
 };
 </script>
