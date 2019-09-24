@@ -3,7 +3,7 @@
     <page-title :title="content.title" />
     <page-desc :desc="content.desc" />
     <div v-for="discipline in disciplines" :key="discipline.title">
-      <discipline :imageSrc="discipline.imgSrc" :link="discipline.link" :title="discipline.title" />
+      <discipline :image="discipline.imgSrc" :link="discipline.link" :title="discipline.title" />
     </div>
   </div>
 </template>

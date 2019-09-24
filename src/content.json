@@ -18,25 +18,25 @@
     {
       "title": "Table tennis",
       "link": "/",
-      "imgSrc": "@/assets/table_tennis.png"
+      "imgSrc": "table_tennis"
     },
 
     {
       "title": "Table football",
       "link": "/",
-      "imgSrc": "@/assets/football.png"
+      "imgSrc": "football"
     },
 
     {
       "title": "Air hockey",
       "link": "/",
-      "imgSrc": "@/assets/hockey.png"
+      "imgSrc": "hockey"
     },
 
     {
       "title": "Checkers",
       "link": "/",
-      "imgSrc": "@/assets/checkers.png"
+      "imgSrc": "checkers"
     }
   ]
 }
