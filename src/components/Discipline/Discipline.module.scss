@@ -1,0 +1,12 @@
+.discipline {
+  display: block;
+  width: 150px;
+  padding: 20px;
+  border: 1px solid pink;
+  text-align: center;
+
+  &_img {
+    width: 100px;
+    height: 100px;
+  }
+}

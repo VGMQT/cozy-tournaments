@@ -2,6 +2,10 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Homepage from './views/Homepage.vue';
 import Account from './views/Account.vue';
+import Tennis from './views/Tennis';
+import Football from './views/Football';
+import Checkers from './views/Checkers';
+import Hockey from './views/Hockey';
 
 Vue.use(Router);
 
@@ -19,6 +23,10 @@ export default new Router({
       name: 'account',
       component: Account,
     },
+    { path: '/tennis', component: Tennis },
+    { path: '/football', component: Football },
+    { path: '/checkers', component: Checkers },
+    { path: '/hockey', component: Hockey },
     {
       path: '/tournaments',
       name: 'tournaments',
