@@ -1,6 +1,6 @@
 <template>
   <a :class="$style.discipline" :href="link">
-    <img :class="$style.discipline_img" :src="require(`@/assets/${image}.png`)" alt="" />
+    <img :class="$style.discipline_img" :src="require(`@/assets/${image}`)" alt="" />
     <h2>{{ title }}</h2></a
   >
 </template>

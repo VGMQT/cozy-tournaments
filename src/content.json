@@ -18,25 +18,31 @@
     {
       "title": "Table tennis",
       "link": "/tennis",
-      "imgSrc": "table_tennis"
+      "imgSrc": "tennis.gif"
     },
 
     {
       "title": "Table football",
       "link": "/football",
-      "imgSrc": "football"
+      "imgSrc": "football.gif"
     },
 
     {
       "title": "Air hockey",
       "link": "/hockey",
-      "imgSrc": "hockey"
+      "imgSrc": "hockey.gif"
     },
 
     {
       "title": "Checkers",
       "link": "/checkers",
-      "imgSrc": "checkers"
+      "imgSrc": "checkers.png"
+    },
+
+    {
+      "title": "Mortal Combat",
+      "link": "/mortal_combat",
+      "imgSrc": "mortal.gif"
     }
   ]
 }

@@ -6,6 +6,7 @@ import Tennis from './views/Tennis';
 import Football from './views/Football';
 import Checkers from './views/Checkers';
 import Hockey from './views/Hockey';
+import NotFound from './views/NotFound';
 
 Vue.use(Router);
 
@@ -27,6 +28,7 @@ export default new Router({
     { path: '/football', component: Football },
     { path: '/checkers', component: Checkers },
     { path: '/hockey', component: Hockey },
+    { path: '*', component: NotFound },
     {
       path: '/tournaments',
       name: 'tournaments',
