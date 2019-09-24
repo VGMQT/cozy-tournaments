@@ -48,3 +48,6 @@ bower_components
 *.swp
 *.vi
 *~
+
+# Private files
+private.json
