@@ -1,10 +1,8 @@
 <template>
-  <div :class="$style.discipline">
+  <a :class="$style.discipline" :href="link">
     <img :class="$style.discipline_img" :src="require(`@/assets/${image}.png`)" alt="" />
-    <a :class="$style.description" :href="link"
-      ><h2>{{ title }}</h2></a
-    >
-  </div>
+    <h2>{{ title }}</h2></a
+  >
 </template>
 
 <script>

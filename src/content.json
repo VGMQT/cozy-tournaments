@@ -17,25 +17,25 @@
   "disciplines": [
     {
       "title": "Table tennis",
-      "link": "/",
+      "link": "/tennis",
       "imgSrc": "table_tennis"
     },
 
     {
       "title": "Table football",
-      "link": "/",
+      "link": "/football",
       "imgSrc": "football"
     },
 
     {
       "title": "Air hockey",
-      "link": "/",
+      "link": "/hockey",
       "imgSrc": "hockey"
     },
 
     {
       "title": "Checkers",
-      "link": "/",
+      "link": "/checkers",
       "imgSrc": "checkers"
     }
   ]
