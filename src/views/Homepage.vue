@@ -2,22 +2,14 @@
   <div class="container">
     <page-title :title="content.title" />
     <page-desc :desc="content.desc" />
-    <div>
-      <discipline
-        v-for="discipline in disciplines"
-        :key="discipline.title"
-        :image="discipline.imgSrc"
-        :link="discipline.link"
-        :title="discipline.title"
-      />
-    </div>
+    <disciplines-list :disciplines="disciplines" />
   </div>
 </template>
 
 <script>
 import PageTitle from '@/elements/PageTitle';
 import PageDesc from '@/elements/PageDesc';
-import Discipline from '@/components/Discipline';
+import DisciplinesList from '@/components/DisciplinesList';
 import content from '@/content.json';
 
 export default {
@@ -25,7 +17,7 @@ export default {
   components: {
     PageTitle,
     PageDesc,
-    Discipline,
+    DisciplinesList,
   },
   data: () => ({
     disciplines: content.disciplines,
