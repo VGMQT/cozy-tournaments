@@ -11,7 +11,7 @@
 
   "account": {
     "title": "Log in or <br /> Create an account",
-    "registerForm": ["E-mail", "Password", "Proceed"]
+    "accountForm": ["E-mail", "Password", "Proceed"]
   },
 
   "disciplines": [

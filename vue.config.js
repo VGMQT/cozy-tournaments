@@ -8,6 +8,14 @@ module.exports = {
       .loader('svgo-loader');
   },
 
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:4000/'
+      }
+    }
+  },
+
   pluginOptions: {
     svgSprite: {
       dir: 'src/assets/icons/svg',
