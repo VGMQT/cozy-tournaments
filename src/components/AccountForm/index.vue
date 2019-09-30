@@ -2,11 +2,11 @@
   <form :class="$style.form" @submit="login">
     <div :class="$style.fieldset">
       <label class="label" for="email">{{ content.accountForm[0] }}</label>
-      <input class="input" id="email" type="email" />
+      <input v-model="user.email" class="input" id="email" type="email" />
     </div>
     <div :class="$style.fieldset">
       <label class="label" for="password">{{ content.accountForm[1] }}</label>
-      <input class="input" id="password" type="password" />
+      <input v-model="user.password" class="input" id="password" type="password" />
     </div>
     <div class="btn-wrapper">
       <button class="btn" type="submit">{{ content.accountForm[2] }}</button>
@@ -21,31 +21,28 @@ import router from '../../router';
 
 export default {
   name: 'account-form',
-  data: () => ({
-    content: content.account,
-  }),
+  data() {
+    return {
+      content: content.account,
+      user: {
+        email: '',
+        password: '',
+      },
+    };
+  },
   methods: {
-    login: e => {
+    login(e) {
       e.preventDefault();
 
-      const login = () => {
-        const data = {
-          email: e.target.elements.email.value,
-          password: e.target.elements.password.value,
-        };
-
-        axios
-          .post('/api/auth', data)
-          .then(response => {
-            console.log('Logged in!');
-            router.push('/');
-          })
-          .catch(errors => {
-            console.log('Cannot log in!');
-          });
-      };
-
-      login();
+      axios
+        .post('/api/auth', this.user)
+        .then(response => {
+          console.log('Logged in!');
+          router.push('/');
+        })
+        .catch(errors => {
+          console.log('Cannot log in!');
+        });
     },
   },
 };
