@@ -148,10 +148,6 @@
     }
   }
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-
   &::before {
     position: absolute;
     top: 0;
@@ -162,6 +158,10 @@
     background-color: $text_color;
     transition: height .3s;
     content: "";
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 

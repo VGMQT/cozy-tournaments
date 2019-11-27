@@ -2,9 +2,19 @@
   "extends": ["stylelint-config-standard"],
   "plugins": ["stylelint-order"],
   "rules": {
+    "at-rule-empty-line-before": ["always", {
+      "except": [
+        "blockless-after-blockless",
+        "first-nested"
+      ],
+      "ignore": [
+        "after-comment"
+      ]
+    }],
     "at-rule-no-unknown": null,
     "color-hex-length": "long",
     "declaration-empty-line-before": "never",
+    "font-family-no-missing-generic-family-keyword": null,
     "length-zero-no-unit": null,
     "no-descending-specificity": null,
     "number-leading-zero": "never",
@@ -164,35 +174,9 @@
       },
       {
         "type": "rule",
-        "selector": "^&:first-(child|of-type)"
-      },
-      {
-        "type": "rule",
-        "selector": "^&:last-(child|of-type)"
-      },
-      {
-        "type": "rule",
-        "selector": "^&:nth-((last-)*(child|of-type))"
-      },
-      {
-        "type": "rule",
-        "selector": "^&:o(nly-(child|of-type))"
-      },
-      {
-        "type": "rule",
-        "selector": "^&:\\w"
-      },
-      {
-        "type": "rule",
         "selector": "^&:out-of-range|^&:r(e(ad-(only|write)))"
       },
 
-      {
-        "type": "at-rule",
-        "name": "include",
-        "parameter": "laptop",
-        "hasBlock": true
-      },
       {
         "type": "at-rule",
         "name": "include",
@@ -202,7 +186,13 @@
       {
         "type": "at-rule",
         "name": "include",
-        "parameter": "mobile",
+        "parameter": "laptop",
+        "hasBlock": true
+      },
+      {
+        "type": "at-rule",
+        "name": "include",
+        "parameter": "desktop",
         "hasBlock": true
       },
       {
@@ -224,9 +214,38 @@
         "type": "rule",
         "selector": "^&::\\w"
       },
+
+      {
+        "type": "rule",
+        "selector": "^&:first-(child|of-type)"
+      },
+      {
+        "type": "rule",
+        "selector": "^&:nth-((last-)*(child|of-type))"
+      },
+      {
+        "type": "rule",
+        "selector": "^&:last-(child|of-type)"
+      },
+      {
+        "type": "rule",
+        "selector": "^&:o(nly-(child|of-type))"
+      },
       {
         "type": "rule",
         "selector": "^&_"
+      },
+      {
+        "type": "rule",
+        "selector": "^&."
+      },
+      {
+        "type": "rule",
+        "selector": "^&__"
+      },
+      {
+        "type": "rule",
+        "selector": "^&-"
       },
       {
         "type": "rule",
