@@ -1,17 +1,13 @@
-const config = require('config');
-const Joi = require('joi');
-Joi.objectId = require('joi-objectid')(Joi);
-const mongoose = require('mongoose');
 const express = require('express');
-const auth = require('./routes/auth');
-
-const app = express();
+const mongoose = require('mongoose');
 const prv = require('./private');
 
-if (!config.get('PrivateKey')) {
-  console.error('FATAL ERROR: PrivateKey is not defined.');
-  process.exit(1);
-}
+const Joi = require('joi');
+Joi.objectId = require('joi-objectid')(Joi);
+
+const app = express();
+
+const auth = require('./routes/auth');
 
 mongoose
   .connect(prv.atlas, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
