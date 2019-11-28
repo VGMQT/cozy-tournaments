@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const prv = require('./private');
+const prv = require('./private/private.json');
 
 const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);

@@ -1,8 +1,8 @@
 const fs = require('fs');
 const jwt = require('jsonwebtoken');
 
-const privateKey = fs.readFileSync('../private.key', 'utf8');
-const publicKey = fs.readFileSync('../public.key', 'utf8');
+const privateKey = fs.readFileSync('private/private.key', 'utf8');
+const publicKey = fs.readFileSync('private/public.key', 'utf8');
 
 module.exports = {
   sign: payload => {
