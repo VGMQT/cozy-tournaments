@@ -8,6 +8,9 @@
           </router-link>
         </div>
         <div :class="$style.menu">
+          <button type="button" :class="$style.exit" class="hidden" id="logOut" @click="logOut">
+            <svg-icon name="exit" :className="$style.exit__svg" title="Log out" />
+          </button>
           <div :class="$style.account">
             <router-link to="/account" :class="$style.account__link">
               <svg-icon name="account" :className="$style.account__svg" title="Account" />
@@ -49,8 +52,24 @@ export default {
   name: 'header-section',
   data: () => ({
     isOpen: false,
+    loggedIn: false,
     content,
   }),
+  methods: {
+    logOut(e) {
+      e.preventDefault();
+
+      localStorage.removeItem('jwt');
+      localStorage.removeItem('user');
+      document.getElementById('logOut').classList.add('hidden');
+
+      if (this.$route.params.nextUrl !== undefined) {
+        this.$router.push(this.$route.params.nextUrl);
+      } else {
+        this.$router.push('/').catch(err => {});
+      }
+    },
+  },
   components: {
     SvgIcon,
   },

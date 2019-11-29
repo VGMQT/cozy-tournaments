@@ -2,11 +2,17 @@
   <form :class="$style.form" @submit="submit">
     <div class="fieldset">
       <label class="label" for="email">{{ content.accountForm[0] }}</label>
-      <input v-model="user.email" class="input" id="email" type="email" />
+      <input v-model="user.email" class="input" id="email" type="email" autocomplete="email" />
     </div>
     <div class="fieldset">
       <label class="label" for="password">{{ content.accountForm[1] }}</label>
-      <input v-model="user.password" class="input" id="password" type="password" />
+      <input
+        v-model="user.password"
+        class="input"
+        id="password"
+        type="password"
+        autocomplete="current-password"
+      />
     </div>
     <div class="fieldset fieldset_checkbox">
       <input v-model="user.isAdmin" class="checkbox" id="isAdmin" type="checkbox" />
@@ -25,16 +31,14 @@ import router from '../../router';
 
 export default {
   name: 'auth-form',
-  data() {
-    return {
-      content: content.account,
-      user: {
-        email: '',
-        password: '',
-        isAdmin: false,
-      },
-    };
-  },
+  data: () => ({
+    content: content.account,
+    user: {
+      email: '',
+      password: '',
+      isAdmin: false,
+    },
+  }),
   methods: {
     submit(e) {
       e.preventDefault();
@@ -50,6 +54,7 @@ export default {
 
             if (localStorage.getItem('jwt') !== null) {
               this.$emit('logged-in');
+              document.getElementById('logOut').classList.remove('hidden');
 
               if (this.$route.params.nextUrl !== undefined) {
                 this.$router.push(this.$route.params.nextUrl);

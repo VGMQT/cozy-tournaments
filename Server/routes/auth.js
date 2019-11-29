@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
     }
 
     const token = jwt.sign({ _id: user._id });
-    res.header('x-auth-token', token).send(_.pick(user, ['_id', 'email', 'isAdmin']));
+    res.header('x-auth-token', token).send(_.pick(user, ['isAdmin']));
   } else {
     // Insert the new user if they do not exist yet
     user = new User(_.pick(req.body, ['email', 'password', 'isAdmin']));
@@ -35,7 +35,7 @@ router.post('/', async (req, res) => {
     await user.save();
 
     const token = jwt.sign({ _id: user._id });
-    res.header('x-auth-token', token).send(_.pick(user, ['_id', 'email', 'isAdmin']));
+    res.header('x-auth-token', token).send(_.pick(user, ['isAdmin']));
   }
 });
 

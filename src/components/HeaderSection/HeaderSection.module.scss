@@ -42,9 +42,28 @@
   }
 }
 
+.exit {
+  display: block;
+  width: rem(32px);
+  height: rem(32px);
+  margin: -4px rem(10px) 0 0;
+
+  &:hover,
+  &:focus {
+    .exit__svg {
+      background-color: rgba($secondary_color_light, .3);
+    }
+  }
+
+  &__svg {
+    fill: $primary_color;
+
+    @include svg();
+  }
+}
+
 .account {
-  margin-top: -4px;
-  margin-right: rem(10px);
+  margin: -4px rem(10px) 0 0;
 
   &__link {
     display: block;
