@@ -25,17 +25,17 @@ router.post('/', async (req, res) => {
     }
 
     const token = jwt.sign({ _id: user._id });
-    res.header('x-auth-token', token).send(_.pick(user, ['_id', 'email']));
+    res.header('x-auth-token', token).send(_.pick(user, ['_id', 'email', 'isAdmin']));
   } else {
     // Insert the new user if they do not exist yet
-    user = new User(_.pick(req.body, ['email', 'password']));
+    user = new User(_.pick(req.body, ['email', 'password', 'isAdmin']));
 
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(user.password, salt);
     await user.save();
 
     const token = jwt.sign({ _id: user._id });
-    res.header('x-auth-token', token).send(_.pick(user, ['_id', 'email']));
+    res.header('x-auth-token', token).send(_.pick(user, ['_id', 'email', 'isAdmin']));
   }
 });
 

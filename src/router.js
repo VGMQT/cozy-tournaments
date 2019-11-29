@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Homepage from './views/Homepage.vue';
+import Auth from './views/Auth.vue';
 import Account from './views/Account.vue';
+import Dashboard from './views/Dashboard.vue';
 import Tennis from './views/Tennis';
 import Football from './views/Football';
 import Checkers from './views/Checkers';
@@ -10,7 +12,7 @@ import NotFound from './views/NotFound';
 
 Vue.use(Router);
 
-export default new Router({
+let router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -20,9 +22,29 @@ export default new Router({
       component: Homepage,
     },
     {
+      path: '/auth',
+      name: 'auth',
+      component: Auth,
+      meta: {
+        guest: true,
+      },
+    },
+    {
       path: '/account',
       name: 'account',
       component: Account,
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: Dashboard,
+      meta: {
+        requiresAuth: true,
+        isAdmin: true,
+      },
     },
     { path: '/tennis', component: Tennis },
     { path: '/football', component: Football },
@@ -39,3 +61,36 @@ export default new Router({
     },
   ],
 });
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (localStorage.getItem('jwt') === null) {
+      next({
+        path: '/auth',
+        params: { nextUrl: to.fullPath },
+      });
+    } else {
+      let user = JSON.parse(localStorage.getItem('user'));
+
+      if (to.matched.some(record => record.meta.isAdmin)) {
+        if (user.isAdmin === true) {
+          next();
+        } else {
+          next({ name: 'account' });
+        }
+      } else {
+        next();
+      }
+    }
+  } else if (to.matched.some(record => record.meta.guest)) {
+    if (localStorage.getItem('jwt') === null) {
+      next();
+    } else {
+      next({ name: 'account' });
+    }
+  } else {
+    next();
+  }
+});
+
+export default router;

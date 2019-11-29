@@ -3,4 +3,8 @@
   margin-bottom: rem(5px);
   font-size: rem(18px);
   color: $text_color;
+
+  &_checkbox {
+    margin-bottom: 0;
+  }
 }

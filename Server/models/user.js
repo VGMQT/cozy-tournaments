@@ -17,6 +17,10 @@ const User = mongoose.model(
       minlength: 5,
       maxlength: 1024,
     },
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
   })
 );
 
@@ -31,6 +35,7 @@ const validateUser = user => {
       .min(5)
       .max(255)
       .required(),
+    isAdmin: Joi.boolean().default(false),
   };
 
   return Joi.validate(user, schema);
