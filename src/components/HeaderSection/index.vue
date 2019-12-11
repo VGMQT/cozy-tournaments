@@ -8,12 +8,7 @@
           </router-link>
         </div>
         <div :class="$style.menu">
-          <button
-            type="button"
-            :class="[$style.exit, loggedIn ? '' : 'hidden']"
-            id="logOut"
-            @click="logOut"
-          >
+          <button type="button" :class="[$style.exit, loggedIn ? '' : 'hidden']" @click="logOut">
             <svg-icon name="exit" :className="$style.exit__svg" title="Log out" />
           </button>
           <div :class="$style.account">
@@ -67,7 +62,7 @@ export default {
 
       localStorage.removeItem('jwt');
       localStorage.removeItem('user');
-      document.getElementById('logOut').classList.add('hidden');
+      this.loggedIn = false;
 
       if (this.$route.params.nextUrl !== undefined) {
         this.$router.push(this.$route.params.nextUrl);
