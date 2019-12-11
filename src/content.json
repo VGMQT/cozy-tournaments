@@ -41,13 +41,13 @@
     },
 
     {
-      "title": "Mortal Combat",
-      "link": "/mortal_combat",
+      "title": "Mortal Kombat 11",
+      "link": "/mortal_Kombat",
       "imgSrc": "mortal.gif"
     },
 
     {
-      "title": "Tekken",
+      "title": "Tekken 7",
       "link": "/tekken",
       "imgSrc": "tekken.gif"
     }

@@ -8,7 +8,12 @@
           </router-link>
         </div>
         <div :class="$style.menu">
-          <button type="button" :class="$style.exit" class="hidden" id="logOut" @click="logOut">
+          <button
+            type="button"
+            :class="[$style.exit, loggedIn ? '' : 'hidden']"
+            id="logOut"
+            @click="logOut"
+          >
             <svg-icon name="exit" :className="$style.exit__svg" title="Log out" />
           </button>
           <div :class="$style.account">
@@ -47,6 +52,7 @@
 <script>
 import SvgIcon from '@/elements/SvgIcon';
 import content from '@/content.json';
+import EventBus from '@/EventBus';
 
 export default {
   name: 'header-section',
@@ -69,6 +75,11 @@ export default {
         this.$router.push('/').catch(err => {});
       }
     },
+  },
+  mounted: function() {
+    EventBus.$on('logged-in', () => {
+      this.loggedIn = true;
+    });
   },
   components: {
     SvgIcon,

@@ -26,6 +26,7 @@
 
 <script>
 import content from '@/content.json';
+import EventBus from '@/EventBus';
 import axios from 'axios';
 import router from '../../router';
 
@@ -53,8 +54,7 @@ export default {
             localStorage.setItem('jwt', response.headers['x-auth-token']);
 
             if (localStorage.getItem('jwt') !== null) {
-              this.$emit('logged-in');
-              document.getElementById('logOut').classList.remove('hidden');
+              EventBus.$emit('logged-in');
 
               if (this.$route.params.nextUrl !== undefined) {
                 this.$router.push(this.$route.params.nextUrl);
