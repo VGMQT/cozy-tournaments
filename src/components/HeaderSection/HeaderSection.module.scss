@@ -63,25 +63,19 @@
 }
 
 .account {
-  margin: -4px rem(10px) 0 0;
+  margin: -4px 0 0 0;
 
   &__link {
     display: block;
-    width: rem(30px);
-    height: rem(30px);
+    width: rem(35px);
+    height: rem(35px);
 
     &:hover,
     &:focus {
-      .account__svg {
+      :global(.emoji) {
         background-color: rgba($secondary_color_light, .3);
       }
     }
-  }
-
-  &__svg {
-    fill: $primary_color;
-
-    @include svg();
   }
 }
 

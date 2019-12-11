@@ -12,8 +12,8 @@
             <svg-icon name="exit" :className="$style.exit__svg" title="Log out" />
           </button>
           <div :class="$style.account">
-            <router-link to="/account" :class="$style.account__link">
-              <svg-icon name="account" :className="$style.account__svg" title="Account" />
+            <router-link to="/account" :class="$style.account__link" title="Account">
+              <div v-emoji>🙂</div>
             </router-link>
           </div>
           <div :class="$style.navigation">
