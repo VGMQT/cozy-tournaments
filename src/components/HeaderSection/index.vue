@@ -4,16 +4,21 @@
       <div :class="$style.wrapper">
         <div :class="$style.logo">
           <router-link to="/" :class="$style.logo__link">
-            <svg-icon name="logo" :className="$style.logo__svg" title="Logo" />
+            <div v-emoji>🏟️</div>
           </router-link>
         </div>
         <div :class="$style.menu">
-          <button type="button" :class="[$style.exit, loggedIn ? '' : 'hidden']" @click="logOut">
-            <svg-icon name="exit" :className="$style.exit__svg" title="Log out" />
+          <button
+            type="button"
+            :class="[$style.exit, loggedIn ? '' : 'hidden']"
+            title="Log out"
+            @click="logOut"
+          >
+            <div v-emoji>🚪</div>
           </button>
           <div :class="$style.account">
             <router-link to="/account" :class="$style.account__link" title="Account">
-              <div v-emoji>🙂</div>
+              <div v-emoji>🏡</div>
             </router-link>
           </div>
           <div :class="$style.navigation">
@@ -45,7 +50,6 @@
 </template>
 
 <script>
-import SvgIcon from '@/elements/SvgIcon';
 import content from '@/content.json';
 import EventBus from '@/EventBus';
 
@@ -75,9 +79,6 @@ export default {
     EventBus.$on('logged-in', () => {
       this.loggedIn = true;
     });
-  },
-  components: {
-    SvgIcon,
   },
 };
 </script>

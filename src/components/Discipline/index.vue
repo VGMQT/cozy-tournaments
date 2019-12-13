@@ -1,8 +1,12 @@
 <template>
-  <a :class="$style.discipline" :href="link">
-    <img :class="$style.discipline_img" :src="require(`@/assets/${image}`)" alt="" />
-    <h2>{{ title }}</h2></a
-  >
+  <li :class="$style.item">
+    <a :class="$style.discipline" :href="link">
+      <div :class="$style.wrapper">
+        <div :class="[$style.pic, additionalClass]" />
+      </div>
+      <h2 :class="$style.title">{{ title }}</h2>
+    </a>
+  </li>
 </template>
 
 <script>
@@ -12,6 +16,7 @@ export default {
     link: String,
     title: String,
     image: String,
+    additionalClass: String,
   },
 };
 </script>

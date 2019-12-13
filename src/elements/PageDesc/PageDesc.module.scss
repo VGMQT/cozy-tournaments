@@ -1,6 +1,7 @@
 @import "../../styles/includes/includes";
 
 .desc {
+  margin-bottom: rem(20px);
   font-size: rem(16px);
-  color: $text_color_dark;
+  color: $text_color;
 }

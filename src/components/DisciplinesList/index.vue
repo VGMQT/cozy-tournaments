@@ -1,12 +1,15 @@
 <template>
-  <div :class="$style.disciplines">
-    <discipline
-      v-for="discipline in disciplines"
-      :key="discipline.title"
-      :image="discipline.imgSrc"
-      :link="discipline.link"
-      :title="discipline.title"
-    />
+  <div :class="$style.wrapper">
+    <ul :class="$style.disciplines">
+      <discipline
+        v-for="discipline in disciplines"
+        :key="discipline.title"
+        :image="discipline.imgSrc"
+        :link="discipline.link"
+        :title="discipline.title"
+        :additionalClass="discipline.additionalClass"
+      />
+    </ul>
   </div>
 </template>
 

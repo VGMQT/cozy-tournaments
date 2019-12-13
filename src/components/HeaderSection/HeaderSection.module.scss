@@ -16,17 +16,10 @@
     display: block;
     width: rem(60px);
     height: rem(60px);
-
-    &:hover,
-    &:focus {
-      .logo__svg {
-        background-color: rgba($secondary_color_light, .3);
-      }
-    }
   }
 
   &__svg {
-    fill: $primary_color;
+    fill: $main_color;
 
     @include svg();
   }
@@ -48,34 +41,20 @@
   height: rem(32px);
   margin: -4px rem(10px) 0 0;
 
-  &:hover,
-  &:focus {
-    .exit__svg {
-      background-color: rgba($secondary_color_light, .3);
-    }
-  }
-
   &__svg {
-    fill: $primary_color;
+    fill: $main_color;
 
     @include svg();
   }
 }
 
 .account {
-  margin: -4px 0 0 0;
+  margin: -8px 0 0 0;
 
   &__link {
     display: block;
     width: rem(35px);
     height: rem(35px);
-
-    &:hover,
-    &:focus {
-      :global(.emoji) {
-        background-color: rgba($secondary_color_light, .3);
-      }
-    }
   }
 }
 
@@ -86,7 +65,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba($secondary_color_dark, .8);
+  background-color: rgba($main_color, .8);
 }
 
 :global(.hamburger) {
@@ -96,21 +75,15 @@
   &:hover,
   &:focus {
     opacity: 1;
-
-    :global(.hamburger) {
-      &-box {
-        background-color: rgba($secondary_color_light, .3);
-      }
-    }
   }
 
   &-inner,
   :global(.hamburger-inner) {
-    background-color: $primary_color;
+    background-color: $main_color;
 
     &::before,
     &::after {
-      background-color: $primary_color;
+      background-color: $main_color;
     }
   }
 }
@@ -119,12 +92,6 @@
   &:hover,
   &:focus {
     opacity: 1;
-
-    :global(.hamburger) {
-      &-box {
-        background-color: rgba($text_color, .3);
-      }
-    }
   }
 
   &-inner,
@@ -157,6 +124,7 @@
 .link {
   @include font(700);
   position: relative;
+  z-index: 1;
   display: block;
   text-align: center;
   font-size: rem(40px);
@@ -165,8 +133,6 @@
 
   &:hover,
   &:focus {
-    color: $secondary_color_light;
-
     &::before {
       height: 100%;
     }
@@ -180,7 +146,7 @@
     display: block;
     width: 100%;
     height: 0;
-    background-color: $text_color;
+    background-color: $accent_color;
     transition: height .3s;
     content: "";
   }

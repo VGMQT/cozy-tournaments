@@ -18,38 +18,44 @@
     {
       "title": "Table tennis",
       "link": "/tennis",
-      "imgSrc": "tennis.gif",
+      "imgSrc": "table-tennis.jpg",
+      "additionalClass": "table-tennis",
       "leaders": [{ "name": "Ann", "wins": 2 }, { "name": "Bill", "wins": 1 }]
     },
 
     {
       "title": "Table football",
       "link": "/football",
-      "imgSrc": "football.gif"
+      "imgSrc": "table-football.jpg",
+      "additionalClass": "table-football"
     },
 
     {
       "title": "Air hockey",
       "link": "/hockey",
-      "imgSrc": "hockey.gif"
+      "imgSrc": "air-hockey.png",
+      "additionalClass": "air-hockey"
     },
 
     {
       "title": "Checkers",
       "link": "/checkers",
-      "imgSrc": "checkers.gif"
+      "imgSrc": "checkers.jpg",
+      "additionalClass": "checkers"
     },
 
     {
       "title": "Mortal Kombat 11",
       "link": "/mortal_Kombat",
-      "imgSrc": "mortal.gif"
+      "imgSrc": "mk11.jpg",
+      "additionalClass": "mk11"
     },
 
     {
       "title": "Tekken 7",
       "link": "/tekken",
-      "imgSrc": "tekken.gif"
+      "imgSrc": "tekken7.jpg",
+      "additionalClass": "tekken7"
     }
   ]
 }
