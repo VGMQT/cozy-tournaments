@@ -1,0 +1,62 @@
+@import "../../styles/includes/includes";
+
+.branch {
+  display: flex;
+}
+
+.round {
+  display: flex;
+  flex-direction: column;
+  margin-right: rem(50px);
+
+  &_2 {
+    .match {
+      margin: rem(70px) 0 rem(115px);
+    }
+  }
+
+  &_3 {
+    .match {
+      margin: rem(200px) 0 rem(260px);
+    }
+  }
+}
+
+.match {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: rem(50px);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.participant {
+  position: relative;
+  display: flex;
+  padding: rem(5px) rem(60px) rem(5px) rem(30px);
+  margin-bottom: 10px;
+  border-radius: rem(5px);
+  background-color: $main_color;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.name {
+  font-size: rem(20px);
+  color: $text_color;
+}
+
+.points {
+  @include center();
+  font-size: rem(20px);
+  color: $text_color;
+
+  &-wrapper {
+    @include center(y);
+    right: rem(25px);
+  }
+}

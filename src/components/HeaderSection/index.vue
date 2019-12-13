@@ -32,6 +32,7 @@
               class="hamburger hamburger--squeeze"
               :class="{ 'is-active': isOpen }"
               type="button"
+              title="Menu"
             >
               <span class="hamburger-box">
                 <span class="hamburger-inner" />

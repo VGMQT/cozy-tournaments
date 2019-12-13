@@ -12,6 +12,9 @@ import MK11 from './views/MK11';
 import Tekken7 from './views/Tekken7';
 import NotFound from './views/NotFound';
 
+// Lazy Routes
+const Tournament = () => import('./views/Tournament.vue');
+
 Vue.use(Router);
 
 let router = new Router({
@@ -48,13 +51,45 @@ let router = new Router({
         isAdmin: true,
       },
     },
-    { path: '/table-tennis', component: TableTennis },
-    { path: '/table-football', component: TableFootball },
-    { path: '/air-hockey', component: AirHockey },
-    { path: '/checkers', component: Checkers },
-    { path: '/mk11', component: MK11 },
-    { path: '/tekken7', component: Tekken7 },
-    { path: '*', component: NotFound },
+    {
+      path: '/table-tennis',
+      name: 'table-tennis',
+      component: TableTennis,
+    },
+    {
+      path: '/table-football',
+      name: 'table-football',
+      component: TableFootball,
+    },
+    {
+      path: '/air-hockey',
+      name: 'air-hockey',
+      component: AirHockey,
+    },
+    {
+      path: '/checkers',
+      name: 'checkers',
+      component: Checkers,
+    },
+    {
+      path: '/mk11',
+      name: 'mk11',
+      component: MK11,
+    },
+    {
+      path: '/tekken7',
+      name: 'tekken7',
+      component: Tekken7,
+    },
+    {
+      path: '/tournament',
+      name: 'tournament',
+      component: Tournament,
+    },
+    {
+      path: '*',
+      component: NotFound,
+    },
   ],
 });
 

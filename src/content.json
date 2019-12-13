@@ -59,5 +59,8 @@
       "imgSrc": "tekken7.jpg",
       "additionalClass": "tekken7"
     }
-  ]
+  ],
+  "tournament": {
+    "title": "Tournament"
+  }
 }
