@@ -2,12 +2,14 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Homepage from './views/Homepage.vue';
 import Auth from './views/Auth.vue';
-import Account from './views/Account.vue';
+import YourTournaments from './views/YourTournaments.vue';
 import Dashboard from './views/Dashboard.vue';
-import Tennis from './views/Tennis';
-import Football from './views/Football';
+import TableTennis from './views/TableTennis';
+import TableFootball from './views/TableFootball';
+import AirHockey from './views/AirHockey';
 import Checkers from './views/Checkers';
-import Hockey from './views/Hockey';
+import MK11 from './views/MK11';
+import Tekken7 from './views/Tekken7';
 import NotFound from './views/NotFound';
 
 Vue.use(Router);
@@ -30,9 +32,9 @@ let router = new Router({
       },
     },
     {
-      path: '/account',
-      name: 'account',
-      component: Account,
+      path: '/your-tournaments',
+      name: 'your-tournaments',
+      component: YourTournaments,
       meta: {
         requiresAuth: true,
       },
@@ -46,19 +48,13 @@ let router = new Router({
         isAdmin: true,
       },
     },
-    { path: '/tennis', component: Tennis },
-    { path: '/football', component: Football },
+    { path: '/table-tennis', component: TableTennis },
+    { path: '/table-football', component: TableFootball },
+    { path: '/air-hockey', component: AirHockey },
     { path: '/checkers', component: Checkers },
-    { path: '/hockey', component: Hockey },
+    { path: '/mk11', component: MK11 },
+    { path: '/tekken7', component: Tekken7 },
     { path: '*', component: NotFound },
-    {
-      path: '/tournaments',
-      name: 'tournaments',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/Tournaments.vue'),
-    },
   ],
 });
 

@@ -4,7 +4,6 @@
       <discipline
         v-for="discipline in disciplines"
         :key="discipline.title"
-        :image="discipline.imgSrc"
         :link="discipline.link"
         :title="discipline.title"
         :additionalClass="discipline.additionalClass"

@@ -33,7 +33,7 @@ import router from '../../router';
 export default {
   name: 'auth-form',
   data: () => ({
-    content: content.account,
+    content: content.auth,
     user: {
       email: '',
       password: '',

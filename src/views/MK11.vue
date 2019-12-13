@@ -1,11 +1,11 @@
 <template>
   <div class="container">
-    <h1>Account</h1>
+    <h1>Mortal Kombat 11</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'account',
+  name: 'mk11',
 };
 </script>

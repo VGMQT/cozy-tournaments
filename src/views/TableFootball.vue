@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'football',
+  name: 'table-football',
 };
 </script>

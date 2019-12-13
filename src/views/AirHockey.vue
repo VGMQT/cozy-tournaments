@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'hockey',
+  name: 'air-hockey',
 };
 </script>

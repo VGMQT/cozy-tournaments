@@ -10,7 +10,7 @@ import content from '@/content.json';
 import LeadersTable from '../components/LeaderTable/index';
 
 export default {
-  name: 'tennis',
+  name: 'table-tennis',
   components: { LeadersTable },
   data: () => ({
     leaders: content.disciplines[0].leaders,

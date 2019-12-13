@@ -9,15 +9,17 @@
     "desc": "<p>This is a paragraph.</p><p>And this is another one.</p>"
   },
 
-  "account": {
+  "auth": {
     "title": "Log in or <br /> Create an account",
     "accountForm": ["E-mail", "Password", "Proceed"]
   },
-
+  "yourTournaments": {
+    "title": "Your Tournaments"
+  },
   "disciplines": [
     {
       "title": "Table tennis",
-      "link": "/tennis",
+      "link": "/table-tennis",
       "imgSrc": "table-tennis.jpg",
       "additionalClass": "table-tennis",
       "leaders": [{ "name": "Ann", "wins": 2 }, { "name": "Bill", "wins": 1 }]
@@ -25,14 +27,14 @@
 
     {
       "title": "Table football",
-      "link": "/football",
+      "link": "/table-football",
       "imgSrc": "table-football.jpg",
       "additionalClass": "table-football"
     },
 
     {
       "title": "Air hockey",
-      "link": "/hockey",
+      "link": "/air-hockey",
       "imgSrc": "air-hockey.png",
       "additionalClass": "air-hockey"
     },
@@ -46,14 +48,14 @@
 
     {
       "title": "Mortal Kombat 11",
-      "link": "/mortal_Kombat",
+      "link": "/mk11",
       "imgSrc": "mk11.jpg",
       "additionalClass": "mk11"
     },
 
     {
       "title": "Tekken 7",
-      "link": "/tekken",
+      "link": "/tekken7",
       "imgSrc": "tekken7.jpg",
       "additionalClass": "tekken7"
     }

@@ -1,11 +1,11 @@
 <template>
   <li :class="$style.item">
-    <a :class="$style.discipline" :href="link">
+    <router-link :to="link" :class="$style.discipline">
       <div :class="$style.wrapper">
         <div :class="[$style.pic, additionalClass]" />
       </div>
       <h2 :class="$style.title">{{ title }}</h2>
-    </a>
+    </router-link>
   </li>
 </template>
 

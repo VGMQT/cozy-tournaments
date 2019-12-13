@@ -17,8 +17,12 @@
             <div v-emoji>🚪</div>
           </button>
           <div :class="$style.account">
-            <router-link to="/account" :class="$style.account__link" title="Account">
-              <div v-emoji>🏡</div>
+            <router-link
+              to="/your-tournaments"
+              :class="$style.account__link"
+              title="Your Tournaments"
+            >
+              <div v-emoji>🎟️</div>
             </router-link>
           </div>
           <div :class="$style.navigation">
