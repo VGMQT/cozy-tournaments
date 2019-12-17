@@ -1,0 +1,30 @@
+@import "../../styles/includes/includes";
+
+.participant {
+  position: relative;
+  display: flex;
+  padding: rem(5px) rem(60px) rem(5px) rem(30px);
+  margin-bottom: rem(10px);
+  border-radius: 5px;
+  background-color: $main_color;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.name {
+  font-size: rem(20px);
+  color: $text_color;
+}
+
+.points {
+  @include center();
+  font-size: rem(20px);
+  color: $text_color;
+
+  &-wrapper {
+    @include center(y);
+    right: rem(25px);
+  }
+}

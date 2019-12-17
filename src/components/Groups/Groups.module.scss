@@ -1,0 +1,10 @@
+@import "../../styles/includes/includes";
+
+.groups {
+  margin-bottom: rem(50px);
+}
+
+.group {
+  display: inline-flex;
+  flex-direction: column;
+}

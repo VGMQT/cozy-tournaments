@@ -1,7 +1,7 @@
 {
   "nav": {
     "Home": "/",
-    "Tournaments": "/tournaments"
+    "Tournament": "/tournament"
   },
 
   "homepage": {
@@ -21,8 +21,7 @@
       "title": "Table tennis",
       "link": "/table-tennis",
       "imgSrc": "table-tennis.jpg",
-      "additionalClass": "table-tennis",
-      "leaders": [{ "name": "Ann", "wins": 2 }, { "name": "Bill", "wins": 1 }]
+      "additionalClass": "table-tennis"
     },
 
     {

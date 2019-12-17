@@ -39,7 +39,7 @@
   display: block;
   width: rem(32px);
   height: rem(32px);
-  margin: -4px rem(10px) 0 0;
+  margin: rem(-4px) rem(10px) 0 0;
 
   &__svg {
     fill: $main_color;
@@ -49,7 +49,7 @@
 }
 
 .account {
-  margin: -6px 0 0 0;
+  margin: rem(-6px) 0 0 0;
 
   &__link {
     display: block;
@@ -107,6 +107,7 @@
 
 .nav {
   @include center();
+  position: fixed;
   z-index: 10;
   opacity: 0;
   width: 100%;

@@ -1,0 +1,8 @@
+@import "../../styles/includes/includes";
+
+.title {
+  @include font(700);
+  margin-bottom: rem(10px);
+  font-size: rem(24px);
+  color: $accent_color;
+}

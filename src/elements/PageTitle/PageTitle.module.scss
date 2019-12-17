@@ -2,7 +2,7 @@
 
 .title {
   @include font(700);
-  margin: 60px 0 10px;
+  margin: rem(60px) 0 rem(10px);
   font-size: rem(26px);
   color: $text_color;
 }

@@ -1,7 +1,12 @@
 @import "../../styles/includes/includes";
 
-.branch {
+.bracket {
+  margin-bottom: rem(50px);
+}
+
+.rounds {
   display: flex;
+  overflow-x: auto;
 }
 
 .round {
@@ -20,43 +25,77 @@
       margin: rem(200px) 0 rem(260px);
     }
   }
+
+  &_4 {
+    .match {
+      margin: rem(470px) 0 rem(530px);
+    }
+  }
+
+  &.grand-final {
+    .match {
+      &::before {
+        @include center();
+        width: 200%;
+        height: 200%;
+        background: url("../../assets/bracket/cup.png") center / contain no-repeat;
+        content: '';
+      }
+
+      &::after {
+        @include center(x);
+        @include font(700);
+        top: rem(-90px);
+        display: block;
+        min-width: rem(200px);
+        text-align: center;
+        font-size: rem(24px);
+        color: $accent_color;
+        content: 'Grand Final';
+      }
+    }
+  }
+
+  &.semi-final {
+    .match {
+      &::after {
+        @include center(x);
+        @include font(700);
+        top: rem(-60px);
+        display: block;
+        min-width: rem(200px);
+        text-align: center;
+        font-size: rem(22px);
+        color: $accent_color;
+        content: 'Semi-Final';
+      }
+    }
+  }
+
+  &.quarter-final {
+    .match {
+      &::after {
+        @include center(x);
+        @include font(700);
+        top: rem(-50px);
+        display: block;
+        min-width: rem(200px);
+        text-align: center;
+        font-size: rem(20px);
+        color: $accent_color;
+        content: 'Quarter-Final';
+      }
+    }
+  }
 }
 
 .match {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-bottom: rem(50px);
 
   &:last-child {
     margin-bottom: 0;
-  }
-}
-
-.participant {
-  position: relative;
-  display: flex;
-  padding: rem(5px) rem(60px) rem(5px) rem(30px);
-  margin-bottom: 10px;
-  border-radius: rem(5px);
-  background-color: $main_color;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.name {
-  font-size: rem(20px);
-  color: $text_color;
-}
-
-.points {
-  @include center();
-  font-size: rem(20px);
-  color: $text_color;
-
-  &-wrapper {
-    @include center(y);
-    right: rem(25px);
   }
 }
