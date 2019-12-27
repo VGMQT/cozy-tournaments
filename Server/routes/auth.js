@@ -4,11 +4,11 @@ const jwt = require('../security/jwt');
 
 const router = express.Router();
 const _ = require('lodash');
-const { User, validate } = require('../models/user');
+const { User, validateUser } = require('../models/user');
 
 router.post('/', async (req, res) => {
   // Validate The Request
-  const { error } = validate(req.body);
+  const { error } = validateUser(req.body);
 
   if (error) {
     return res.status(400).send(error.details[0].message);

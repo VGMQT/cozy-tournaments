@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Homepage from './views/Homepage.vue';
 import Auth from './views/Auth.vue';
 import YourTournaments from './views/YourTournaments.vue';
+import CreateTournament from './views/CreateTournament.vue';
 import Dashboard from './views/Dashboard.vue';
 import TableTennis from './views/TableTennis';
 import TableFootball from './views/TableFootball';
@@ -38,6 +39,14 @@ let router = new Router({
       path: '/your-tournaments',
       name: 'your-tournaments',
       component: YourTournaments,
+      meta: {
+        requiresAuth: true,
+      },
+    },
+    {
+      path: '/create-your-tournament',
+      name: 'create-your-tournament',
+      component: CreateTournament,
       meta: {
         requiresAuth: true,
       },

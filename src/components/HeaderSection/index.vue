@@ -80,7 +80,7 @@ export default {
       }
     },
   },
-  mounted: function() {
+  mounted() {
     EventBus.$on('logged-in', () => {
       this.loggedIn = true;
     });

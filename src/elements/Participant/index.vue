@@ -12,7 +12,7 @@ export default {
   name: 'participant',
   props: {
     name: String,
-    points: Number,
+    points: String,
   },
 };
 </script>

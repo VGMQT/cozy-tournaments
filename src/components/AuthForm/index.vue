@@ -18,20 +18,22 @@
       <input v-model="user.isAdmin" class="checkbox" id="isAdmin" type="checkbox" />
       <label class="label label_checkbox" for="isAdmin">Are you an admin?</label>
     </div>
-    <div class="btn-wrapper">
-      <button class="btn" type="submit">{{ content.accountForm[2] }}</button>
-    </div>
+    <btn type="button" btnType="submit" :title="content.accountForm[2]" />
   </form>
 </template>
 
 <script>
-import content from '@/content.json';
-import EventBus from '@/EventBus';
 import axios from 'axios';
+import Btn from '@/elements/Btn';
+import EventBus from '@/EventBus';
+import content from '@/content.json';
 import router from '../../router';
 
 export default {
   name: 'auth-form',
+  components: {
+    Btn,
+  },
   data: () => ({
     content: content.auth,
     user: {

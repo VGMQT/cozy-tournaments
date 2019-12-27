@@ -1,4 +1,7 @@
+@import "../../styles/includes/includes";
+
 .btn {
+  @include font(700);
   position: relative;
   z-index: 1;
   display: inline-block;

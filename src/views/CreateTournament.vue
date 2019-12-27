@@ -1,23 +1,23 @@
 <template>
   <div class="container">
     <page-title :title="content.title" />
-    <btn :title="content.btn" />
+    <create-tournament-form />
   </div>
 </template>
 
 <script>
+import CreateTournamentForm from '@/components/CreateTournamentForm';
 import PageTitle from '@/elements/PageTitle';
-import Btn from '@/elements/Btn';
 import content from '@/content.json';
 
 export default {
-  name: 'your-tournaments',
+  name: 'create-tournament',
   components: {
+    CreateTournamentForm,
     PageTitle,
-    Btn,
   },
   data: () => ({
-    content: content.yourTournaments,
+    content: content.createTournament,
   }),
 };
 </script>

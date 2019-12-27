@@ -14,7 +14,8 @@
     "accountForm": ["E-mail", "Password", "Proceed"]
   },
   "yourTournaments": {
-    "title": "Your Tournaments"
+    "title": "Your Tournaments",
+    "btn": "Create Your Tournament"
   },
   "disciplines": [
     {
@@ -61,5 +62,12 @@
   ],
   "tournament": {
     "title": "Tournament"
+  },
+  "createTournament": {
+    "title": "Create Your Tournament"
+  },
+  "createTournamentForm": {
+    "btn": "Proceed",
+    "disciplines": ["first", "second"]
   }
 }
