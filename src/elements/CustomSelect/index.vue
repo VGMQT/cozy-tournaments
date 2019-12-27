@@ -1,9 +1,7 @@
 <template>
-  <div class="custom-select" :tabindex="tabindex" @blur="open = false">
-    <div class="selected" :class="{ open: open }" @click="open = !open" @focus="open = !open">
-      {{ selected }}
-    </div>
-    <div class="items" :class="{ selectHide: !open }">
+  <!-- <div class="custom-select" :tabindex="tabindex" @blur="open = false"> -->
+  <div class="custom-select">
+    <!-- <div class="items" :class="{ selectHide: !open }">
       <div
         class="item"
         v-for="(option, i) of options"
@@ -16,7 +14,21 @@
       >
         {{ option }}
       </div>
+    </div> -->
+    <div class="selected" :class="{ open: open }" @click="open = !open" @focus="open = !open">
+      {{ selected }}
     </div>
+    <input
+      v-for="(option, i) of options"
+      :key="i"
+      @focus="open = true"
+      @blur="open = false"
+      :class="$style.op"
+      id="1"
+      type="radio"
+      name="group"
+    />
+    <label :id="option" v-for="(option, i) of options" :key="i" :for="option">{{ option }}</label>
   </div>
 </template>
 
@@ -44,6 +56,8 @@ export default {
   },
 };
 </script>
+
+<style src="./CustomSelect.module.scss" lang="scss" module />
 
 <style scoped>
 .custom-select {

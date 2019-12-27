@@ -1,0 +1,9 @@
+@import "../../styles/includes/includes";
+
+.op {
+  &:focus {
+    + label {
+      background: red;
+    }
+  }
+}
