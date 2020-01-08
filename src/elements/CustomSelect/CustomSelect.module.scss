@@ -1,9 +1,72 @@
 @import "../../styles/includes/includes";
 
-.op {
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+
   &:focus {
-    + label {
+    + .label {
       background: red;
     }
   }
+}
+
+.select {
+  position: relative;
+  width: 100%;
+}
+
+.current {
+  cursor: pointer;
+}
+
+.current.open {
+  border: 1px solid #ce9b2c;
+  border-radius: 6px 6px 0px 0px;
+}
+
+.current::after {
+  position: absolute;
+  top: 22px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 4px solid transparent;
+  border-color: $accent_color transparent transparent transparent;
+  content: '';
+}
+
+.list {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  height: 0;
+  border-right: 1px solid #ce9b2c;
+  border-bottom: 1px solid #ce9b2c;
+  border-left: 1px solid #ce9b2c;
+  border-width: 0;
+  border-radius: 0px 0px 6px 6px;
+  color: #ffffff;
+  background-color: #080d0e;
+}
+
+.current.open + .list {
+  height: auto;
+  border-width: 1px;
+}
+
+.item {
+  position: relative;
+  padding-left: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+}
+
+.item:hover {
+  background-color: #b68a28;
 }

@@ -68,6 +68,6 @@
   },
   "createTournamentForm": {
     "btn": "Proceed",
-    "disciplines": ["first", "second"]
+    "disciplines": ["Table tennis", "Table football", "Air hockey", "Checkers", "Mortal Kombat 11", "Tekken 7"]
   }
 }

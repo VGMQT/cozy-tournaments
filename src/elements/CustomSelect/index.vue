@@ -1,38 +1,35 @@
 <template>
-  <!-- <div class="custom-select" :tabindex="tabindex" @blur="open = false"> -->
-  <div class="custom-select">
-    <!-- <div class="items" :class="{ selectHide: !open }">
-      <div
-        class="item"
-        v-for="(option, i) of options"
-        :key="i"
-        @click="
-          selected = option;
-          open = false;
-          $emit('input', option);
-        "
-      >
-        {{ option }}
-      </div>
-    </div> -->
-    <div class="selected" :class="{ open: open }" @click="open = !open" @focus="open = !open">
-      {{ selected }}
+  <div class="custom-select" :class="$style.select">
+    <div
+      class="input"
+      :class="[$style.current, isOpen ? $style.open : '']"
+      @click="isOpen = !isOpen"
+    >
+      {{ current }}
     </div>
-    <input
-      v-for="(option, i) of options"
-      :key="i"
-      @focus="open = true"
-      @blur="open = false"
-      :class="$style.op"
-      id="1"
-      type="radio"
-      name="group"
-    />
-    <label :id="option" v-for="(option, i) of options" :key="i" :for="option">{{ option }}</label>
+    <div :class="$style.list">
+      <div v-for="(option, i) of options" :key="i" :class="$style.item">
+        <input
+          @focus="isOpen = true"
+          @keydown.tab="isOpen = false"
+          @click="choose(option, toCamelCase(option))"
+          :class="$style.input"
+          :id="toCamelCase(option)"
+          type="radio"
+          name="group"
+          :value="option"
+        />
+        <label :for="toCamelCase(option)" class="input" :class="$style.label">
+          {{ option }}
+        </label>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import { toCamelCase } from '@/helpers';
+
 export default {
   name: 'custom-select',
   props: {
@@ -40,87 +37,36 @@ export default {
       type: Array,
       required: true,
     },
-    tabindex: {
-      type: Number,
-      default: 0,
+  },
+  methods: {
+    choose(option, optionId) {
+      if (document.getElementById(optionId).checked) {
+        this.current = option;
+      }
     },
   },
-  data() {
-    return {
-      selected: this.options.length > 0 ? this.options[0] : null,
-      open: false,
-    };
-  },
-  mounted() {
-    this.$emit('input', this.selected);
+  data: () => ({
+    isOpen: false,
+    current: 'Choose a Discipline',
+    toCamelCase,
+  }),
+  updated() {
+    // Close custom select list if click outside of it
+    const thisVue = this;
+    const collection = document.getElementsByClassName('custom-select');
+
+    document.addEventListener('click', function(e) {
+      for (let i = 0; i < collection.length; i++) {
+        const isClickedInside = collection[i].contains(e.target);
+
+        if (!isClickedInside) {
+          thisVue.isOpen = false;
+        }
+      }
+    });
+    //--
   },
 };
 </script>
 
 <style src="./CustomSelect.module.scss" lang="scss" module />
-
-<style scoped>
-.custom-select {
-  position: relative;
-  width: 100%;
-  text-align: left;
-  outline: none;
-  height: 47px;
-  line-height: 47px;
-}
-
-.selected {
-  background-color: #080d0e;
-  border-radius: 6px;
-  border: 1px solid #858586;
-  color: #ffffff;
-  padding-left: 8px;
-  cursor: pointer;
-  user-select: none;
-}
-
-.selected.open {
-  border: 1px solid #ce9b2c;
-  border-radius: 6px 6px 0px 0px;
-}
-
-.selected:after {
-  position: absolute;
-  content: '';
-  top: 22px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 4px solid transparent;
-  border-color: #fff transparent transparent transparent;
-}
-
-.items {
-  color: #ffffff;
-  border-radius: 0px 0px 6px 6px;
-  overflow: hidden;
-  border-right: 1px solid #ce9b2c;
-  border-left: 1px solid #ce9b2c;
-  border-bottom: 1px solid #ce9b2c;
-  position: absolute;
-  z-index: 10;
-  background-color: #080d0e;
-  left: 0;
-  right: 0;
-}
-
-.item {
-  color: #ffffff;
-  padding-left: 8px;
-  cursor: pointer;
-  user-select: none;
-}
-
-.item:hover {
-  background-color: #b68a28;
-}
-
-.selectHide {
-  display: none;
-}
-</style>
