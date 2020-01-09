@@ -1,7 +1,7 @@
 <template>
   <form :class="$style.form" @submit="submit">
     <div class="fieldset">
-      <custom-select :options="content.disciplines" />
+      <access-select :options="content.disciplines" />
     </div>
     <btn type="button" btnType="submit" :title="content.btn" />
   </form>
@@ -9,14 +9,14 @@
 
 <script>
 import Btn from '@/elements/Btn';
-import CustomSelect from '@/elements/CustomSelect';
+import AccessSelect from '@/elements/AccessSelect';
 import content from '@/content.json';
 
 export default {
   name: 'create-tournament-form',
   components: {
     Btn,
-    CustomSelect,
+    AccessSelect,
   },
   data: () => ({
     content: content.createTournamentForm,

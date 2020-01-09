@@ -1,14 +1,14 @@
 <template>
-  <div class="custom-select" :class="$style.select">
+  <div class="access-select" :class="$style.select">
     <div
+      @click="isOpen = !isOpen"
       class="input"
       :class="[$style.current, isOpen ? $style.open : '']"
-      @click="isOpen = !isOpen"
     >
       {{ current }}
     </div>
-    <div :class="$style.list">
-      <div v-for="(option, i) of options" :key="i" :class="$style.item">
+    <ul :class="$style.list">
+      <li v-for="(option, i) of options" :key="i" :class="$style.item">
         <input
           @focus="isOpen = true"
           @keydown.tab="isOpen = false"
@@ -16,14 +16,14 @@
           :class="$style.input"
           :id="toCamelCase(option)"
           type="radio"
-          name="group"
+          name="Discipline"
           :value="option"
         />
         <label :for="toCamelCase(option)" class="input" :class="$style.label">
           {{ option }}
         </label>
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -31,7 +31,7 @@
 import { toCamelCase } from '@/helpers';
 
 export default {
-  name: 'custom-select',
+  name: 'access-select',
   props: {
     options: {
       type: Array,
@@ -53,7 +53,7 @@ export default {
   updated() {
     // Close custom select list if click outside of it
     const thisVue = this;
-    const collection = document.getElementsByClassName('custom-select');
+    const collection = document.getElementsByClassName('access-select');
 
     document.addEventListener('click', function(e) {
       for (let i = 0; i < collection.length; i++) {
@@ -69,4 +69,4 @@ export default {
 };
 </script>
 
-<style src="./CustomSelect.module.scss" lang="scss" module />
+<style src="./AccessSelect.module.scss" lang="scss" module />

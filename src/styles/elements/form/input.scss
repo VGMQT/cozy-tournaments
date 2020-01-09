@@ -1,9 +1,16 @@
 .input {
   display: block;
   padding: rem(10px) rem(15px);
+  border: 2px solid transparent;
   border-radius: 5px;
   font-size: rem(16px);
   line-height: 1.4;
   color: $main_color;
-  background-color: $text_color;
+  background-color: $white;
+  transition: border-color .3s;
+
+  &:hover,
+  &:focus {
+    border-color: $main_color;
+  }
 }
